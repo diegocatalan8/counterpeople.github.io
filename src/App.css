@@ -1,28 +1,10 @@
-.App {
-  text-align: center;
+body{
+
+  background-color: var(--azul-oscuro);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #061816;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 :root {
   --azul-oscuro: #061816;
-  --azul-claro: #0f4052;
-  --marron: #bd7026;
-  --amarillo-claro:#d9c680;
-  --blanco-hueso:#edede0;
 }
 
