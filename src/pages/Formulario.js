@@ -1,7 +1,12 @@
 import Boton from "../components/Boton";
+import { borrar } from "../logic/borrar";
+import { guardarDatos } from "../logic/localStorage";
 import "./Formulario.css"
 
+
 const Formulario = () =>{
+
+
     return (
         <form>
             <div className="title-container">
@@ -39,8 +44,8 @@ const Formulario = () =>{
             </div>
             
             <div className="container-button-form">
-                <Boton  identificacion="boton1" ejecutar={()=>console.log("Hola Mundo")} name="Borrar"/>
-                <Boton  identificacion="boton2" ejecutar={()=>console.log("Hola Mundo2")} name="Enviar"/>
+                <Boton  identificacion="boton1" ejecutar={()=>{borrar()}} name="Borrar"/>
+                <Boton  identificacion="boton2" ejecutar={()=>{guardarDatos()}} name="Enviar"/>
             
             </div>
         </form>
