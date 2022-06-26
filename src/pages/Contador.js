@@ -14,16 +14,23 @@ export const Contador = ()=>{
     return(
         <div  className="container-counter">
 
-          <Header/>
+                <Header/>
 
-          <SectionCounter nombreTienda={nombreTienda} numTienda={numeroTienda} capMax={capacidad} contador={contador} />
-          
-          <div className="container-botones">
+                <SectionCounter nombreTienda={nombreTienda} numTienda={numeroTienda} capMax={capacidad} contador={contador} />
                 
-                <button type="button" className="boton-restar">-</button>
-                <button type="button" className="boton-sumar">+</button>
-                
-        </div>
+                <div className="container-botones">
+                        
+                        <button type="button" className="boton-restar" onClick={()=>{
+                            if(contador <= 0){
+                                contador = 0;
+                            }
+                            setContador(contador-1)
+                        
+                }} >-</button>
+                        
+                <button type="button" className="boton-sumar" onClick={()=>setContador(contador+1)}>+</button>
+                        
+                </div>
 
         </div>
     )
