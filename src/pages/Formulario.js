@@ -1,7 +1,6 @@
-import Boton from "../components/Boton";
-import { borrar } from "../logic/borrar";
-import { guardarDatos } from "../logic/localStorage";
 import "./Formulario.css"
+import confetti from 'canvas-confetti';
+
 
 
 const Formulario = () =>{
@@ -43,11 +42,7 @@ const Formulario = () =>{
                     </p>
             </div>
             
-            <div className="container-button-form">
-                <Boton  identificacion="boton1" ejecutar={()=>{borrar()}} name="Borrar"/>
-                <Boton  identificacion="boton2" ejecutar={()=>{guardarDatos()}} name="Enviar"/>
-            
-            </div>
+           
         </form>
     );
 }
