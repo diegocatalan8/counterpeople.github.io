@@ -40,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .section{
@@ -141,3 +142,25 @@
     color: white;
 }
 
+
+
+
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+    /*diseño para el contenedor del contador*/
+    .container-section{
+        height: 540px;
+
+    }
+
+    .section{
+
+        width: 50%;
+        height: 70%;
+        
+    
+    }
+
+  }
