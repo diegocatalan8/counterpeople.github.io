@@ -1,13 +1,13 @@
-export const SectionCounter = () => {
+export const SectionCounter = (props) => {
 
             return(
                 <div className="container-section">
 
                     <section className="section">
-                                <h3 className="title-store">Nombre Tienda</h3>
+                                <h3 className="title-store">{props.nombreTienda} {props.numTienda}</h3>
                                 <div className="container-count">
-                                    <p className="number-people">124</p>
-                                    <p className="cap-max"><small>Capacidad Maxima: 127</small></p>
+                                    <p className="number-people">{props.contador}</p>
+                                    <p className="cap-max"><small>Capacidad Maxima: {props.capMax}</small></p>
                                 </div>
                     </section>
                     
