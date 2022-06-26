@@ -6,6 +6,7 @@ import { Contador } from './pages/Contador';
 import {guardarDatos} from "./logic/localStorage"
 import { borrar } from "./logic/borrar";
 import Boton from "./components/Boton";
+import "./pages/Formulario.css"
 
 
 

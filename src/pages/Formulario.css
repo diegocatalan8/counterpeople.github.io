@@ -46,8 +46,16 @@ form .campos p{
     margin-top: 35px;
     margin-left: 10px;
     font-weight: bold;
+   
 }
 
+form .campos p label{
+    
+    width: 93%;
+    margin-left: 15px;
+    display: block;
+    text-align: start;
+}
 
 
 form .campos input{
@@ -103,36 +111,58 @@ form .campos input:hover {
   @media only screen and (min-width: 600px) {
     /* For tablets: */
    form .campos{
+    width: 93%;
     margin-left: 15px;
+    margin: auto;
    }
 
+   
    form .campos input{
     width: 95%;
    }
+
+   .container-button-form{
+
+    margin-right: 28px;
+   }
+
   }
 
 
   @media only screen and (min-width: 768px) {
     /* For desktop: */
     form .campos{
-        margin-left: 40px;
-       }
-    .container-button-form{
-        margin-right: 50px;
-        width: 93%;
         margin: auto;
-        margin-top: 35px;
-        margin-bottom: 30px;
+        
+       }
+
+    form .campos p{
+        width: 100%;
+       margin-left: 0;
+      
+        
+    }
+    .container-button-form{
+       
+        width: 93%;
+        height: 80px;
+        margin: auto;
+        margin-top: 40px;
+        
+       
         
     }
     .container-button-form  .container-button  {
-        width: 90%;
+        
+        width: 50%;
+      
     }
 
   }
 
+  
 
 
-
+  
 
 
