@@ -4,7 +4,7 @@ export const SectionCounter = (props) => {
                 <div className="container-section">
 
                     <section className="section">
-                                <h3 className="title-store">{props.nombreTienda} {props.numTienda}</h3>
+                                <h3 className="title-store">{props.nombreTienda} #{props.numTienda}</h3>
                                 <div className="container-count">
                                     <p className="number-people">{props.contador}</p>
                                     {

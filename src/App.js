@@ -11,14 +11,19 @@ import "./pages/Formulario.css"
 
 
 function App() {
-  const [form, setForm] = useState(true);
+  
   const [logoReact, setLogo] = useState(true);
+  const [form, setForm] = useState(true);
+  const [validacion, setValidacion] = useState(false);
+ 
+  
+  
 
   useEffect(()=>{
     setTimeout(()=>{
       console.log("Cargando");
      setLogo(false)
-    }, 3000);
+    }, 1500);
 
   }, [])
 
@@ -38,17 +43,31 @@ function App() {
     </div>
     )
   }
+  
 
   if(form){
     return(
       <div className="App">
-          <Formulario/>
+          <Formulario 
+          validacion={validacion}
+          setValidacion={setValidacion}
+            />
+
+
           <div className="container-button-form">
                 
                 <Boton  identificacion="boton1" ejecutar={()=>{borrar()}} name="Borrar"/>
-                <Boton  identificacion="boton2" 
-                ejecutar={()=>{guardarDatos()
-                               setForm(false)}} name="Enviar"/>
+               {
+                validacion ? ( <Boton  identificacion="boton2" 
+                              ejecutar={()=>{guardarDatos()
+                               setForm(false)}} name="Enviar"/>)
+                               :
+
+                               (<Boton  identificacion="boton2" 
+                                name="Enviar"/>)
+                  
+                
+               }
 
          </div>
       </div>
