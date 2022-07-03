@@ -112,7 +112,15 @@ function App() {
 
                   (<Boton  identificacion="boton2" 
                            name="Enviar" 
-                           
+                           ejecutar={
+                            ()=>{
+                              setNumeroTienda({campo: "", valido:false});
+                              setNombreTienda({campo: "", valido:false});
+                              setCapacidad({campo: "", valido:false});
+                              setNombreEmpleado({campo: "", valido:null});
+                              setIdEmpleado({campo: "", valido:null});
+                            }
+                           }
                           
                            />)
                   

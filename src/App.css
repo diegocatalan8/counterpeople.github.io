@@ -1,11 +1,16 @@
 body{
 
-  background-color: var(--azul-oscuro);
+  background:linear-gradient(var(--azul-oscuro), var(--azul-claro));
 }
 
 
 :root {
   --azul-oscuro: #061816;
+  --azul-claro: #0f4052;
+  --marron: #bd7026;
+  --amarillo-claro:#d9c680;
+  --blanco-hueso:#edede0;
+  --turkesa:#48d1cc;
 }
 
 .App {

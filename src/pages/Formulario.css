@@ -41,6 +41,11 @@ form div p small{
 form .campos{
     display: flex;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.30);
+    margin-top: 15px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+
     
    
 }
@@ -48,11 +53,10 @@ form .campos{
 form .campos p{
     margin-top: 35px;
     font-weight: bold;
-   
 }
 
 form .campos p label{
-    
+    color:#edede0;
     width: 93%;
     margin-left: 15px;
     display: block;
@@ -73,7 +77,8 @@ form .campos input{
     font-size: large;
     border: 1px solid black;
     padding-left: 10px;
-   
+    box-shadow: 0 8px 32px 0 rgba(21, 24, 65, 0.37);
+    
 }
 form .campos input:focus{
     
@@ -108,7 +113,7 @@ form .campos input:hover {
 }
 
 .mensajeRojo{
-    color: red;
+    color: rgb(72, 5, 5);
     display: inline-block;
     font-size: small;
     font-weight: 400;    
