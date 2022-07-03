@@ -15,7 +15,15 @@ function App() {
   const [logoReact, setLogo] = useState(true);
   const [form, setForm] = useState(true);
   const [validacion, setValidacion] = useState(false);
- 
+  
+  //estados para los inputs
+  const [numeroTienda, setNumeroTienda] = useState({campo:"", valido:null});
+  const [nombreTienda, setNombreTienda] = useState({campo:"", valido:null});
+  const [capacidad, setCapacidad] = useState({campo:"", valido:null});
+  const [nombreEmpleado, setNombreEmpleado] = useState({campo:"", valido:null});
+  const [idEmpleado, setIdEmpleado] = useState({campo:"", valido:null});
+  
+  
   
   
 
@@ -23,6 +31,7 @@ function App() {
     setTimeout(()=>{
       console.log("Cargando");
      setLogo(false)
+     
     }, 1500);
 
   }, [])
@@ -51,20 +60,61 @@ function App() {
           <Formulario 
           validacion={validacion}
           setValidacion={setValidacion}
+
+          numeroTienda = {numeroTienda}
+          setNumeroTienda ={setNumeroTienda}
+          nombreTienda = {nombreTienda}
+          setNombreTienda={setNombreTienda}
+          capacidad = {capacidad}
+          setCapacidad = {setCapacidad}
+          nombreEmpleado={nombreEmpleado}
+          setNombreEmpleado={setNombreEmpleado}
+          idEmpleado={idEmpleado}
+          setIdEmpleado={setIdEmpleado}
+
+
+          
+         
             />
 
 
           <div className="container-button-form">
                 
-                <Boton  identificacion="boton1" ejecutar={()=>{borrar()}} name="Borrar"/>
-               {
-                validacion ? ( <Boton  identificacion="boton2" 
-                              ejecutar={()=>{guardarDatos()
-                               setForm(false)}} name="Enviar"/>)
-                               :
+                <Boton id ="boton-borrar" 
+                       identificacion="boton1" 
+                       ejecutar={()=>{
+                                                                      
+                             borrar();
+                             setNumeroTienda({campo: "", valido:null});
+                             setNombreTienda({campo: "", valido:null});
+                             setCapacidad({campo: "", valido:null});
+                             setNombreEmpleado({campo: "", valido:null});
+                             setIdEmpleado({campo: "", valido:null});
+                             
+                                                                                                    
+                      }
+                        } 
+                  name="Borrar"/>
 
-                               (<Boton  identificacion="boton2" 
-                                name="Enviar"/>)
+               {
+                validacion ? 
+                ( <Boton  identificacion="boton2" 
+                          ejecutar={()=>{
+                          guardarDatos()
+                          setForm(false)
+                         
+
+                        
+                        }
+                        } name="Enviar"/>)
+                               
+                  :
+
+                  (<Boton  identificacion="boton2" 
+                           name="Enviar" 
+                           
+                          
+                           />)
                   
                 
                }

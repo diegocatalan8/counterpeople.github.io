@@ -1,19 +1,38 @@
 import "./Formulario.css"
-import confetti from 'canvas-confetti';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
 const Formulario = (props) =>{
-    //Destructuracion de los props
-    const {validacion, setValidacion} = props;
 
-    //estados para los inputs
-  const [numeroTienda, setNumeroTienda] = useState({campo:"", valido:null});
-  const [nombreTienda, setNombreTienda] = useState({campo:"", valido:null});
-  const [capacidad, setCapacidad] = useState({campo:"", valido:null});
-  const [nombreEmpleado, setNombreEmpleado] = useState({campo:"", valido:null});
-  const [idEmpleado, setIdEmpleado] = useState({campo:"", valido:null});
+
+    
+   
+
+    //Destructuracion de los props
+    const {validacion, setValidacion,
+    
+    numeroTienda ,
+    setNumeroTienda,
+    nombreTienda ,
+    setNombreTienda,
+    capacidad ,
+    setCapacidad ,
+    nombreEmpleado,
+    setNombreEmpleado,
+    idEmpleado,
+    setIdEmpleado
+
+} = props;
+
+useEffect(()=>{
+    console.log(validacion);
+}, [validacion])
+
+   
+
+    
+
 
   //Expresiones regulares
   const expresiones = {
@@ -48,7 +67,7 @@ const {numTienda, nombre, capacidadTienda, nombreTrabajador, id} = expresiones;
     const onChangeIdEmpleado = (e) => {
         setIdEmpleado({campo: e.target.value, valido: null});
     }
-
+////////////////////////////////////////////////
     //Validacion para las expresiones regulares
     const validacionNumTienda = (e)=>{
         if(numTienda){
@@ -56,10 +75,12 @@ const {numTienda, nombre, capacidadTienda, nombreTrabajador, id} = expresiones;
                
                 setNumeroTienda({campo: e.target.value, valido:null});
             }
+            
             else if(numTienda.test(numeroTienda.campo)){
                
                 setNumeroTienda({campo: e.target.value, valido:true});    
-            }else{
+            }
+            else{
                 
                 setNumeroTienda({campo: e.target.value, valido:false}); 
             }
@@ -131,75 +152,125 @@ const validacionIdEmpleado = (e)=>{
 //////////////////////////////
 
 //Clase para el input de numero de la tienda
-var nTienda;
+var inputClaseNumTienda; //Variable que sera la clase para el campo input, cambiara de verde a rojo.
+var errorFieldNumTienda; //variable que sera la clase que muestre el mensaje de error.
+var validoFieldNumTienda; //variable que sera la clase que muestre el mensaje de validacion.
 
 if(numeroTienda.valido == true){
-    nTienda = "verdeNumTienda";
+    inputClaseNumTienda = "campoVerde";
+    validoFieldNumTienda = "mensajeVerde";
+    errorFieldNumTienda = "none";
+   
+    
 }
 else if(numeroTienda.valido == false){
-    nTienda = "rojoNumTienda";
+    inputClaseNumTienda = "campoRojo";
+    errorFieldNumTienda = "mensajeRojo";
+    validoFieldNumTienda = "none";
+    
 }
 else if(numeroTienda.valido == null){
-    nTienda = "";
+    inputClaseNumTienda = "";
+    errorFieldNumTienda = "none";
+    validoFieldNumTienda = "none";
+
 }
+
+
 
 //Clase para el input de nombre de la tienda
-var nomTienda;
+var inputClaseNombreTienda; //Variable que sera la clase para el campo input, cambiara de verde a rojo.
+var errorFieldNombreTienda; //variable que sera la clase que muestre el mensaje de error.
+var validoFieldNombreTienda; //variable que sera la clase que muestre el mensaje de validacion.
+
 
 if(nombreTienda.valido == true){
-    nomTienda = "verdeNumTienda";
+    inputClaseNombreTienda = "campoVerde";
+    validoFieldNombreTienda = "mensajeVerde";
+    errorFieldNombreTienda = "none";
 }
 else if(nombreTienda.valido == false){
-    nomTienda = "rojoNumTienda";
+    inputClaseNombreTienda = "campoRojo";
+    errorFieldNombreTienda = "mensajeRojo";
+    validoFieldNombreTienda = "none";
 }
-else if(nombreTienda.valido == null){
-    nomTienda = "";
+else if(nombreTienda.valido == null ){
+    inputClaseNombreTienda = "";
+    errorFieldNombreTienda = "none";
+    validoFieldNombreTienda = "none";
+
 }
 
 //Clase para el input de capacidad de la tienda
-var capTienda;
+var inputClaseCapacidad; //Variable que sera la clase para el campo input, cambiara de verde a rojo.
+var errorFieldCapacidad; //variable que sera la clase que muestre el mensaje de error.
+var validoFieldCapacidad; //variable que sera la clase que muestre el mensaje de validacion.
 
 if(capacidad.valido == true){
-    capTienda = "verdeNumTienda";
+   inputClaseCapacidad = "campoVerde";
+    validoFieldCapacidad = "mensajeVerde";
+    errorFieldCapacidad = "none";
 }
 else if(capacidad.valido == false){
-    capTienda = "rojoNumTienda";
+    inputClaseCapacidad = "campoRojo";
+    errorFieldCapacidad = "mensajeRojo";
+    validoFieldCapacidad = "none";
 }
-else if(capacidad.valido == null){
-    capTienda = "";
+else if(capacidad.valido == null ){
+    inputClaseCapacidad = "";
+    errorFieldCapacidad = "none";
+    validoFieldCapacidad = "none";
+
 }
 
 //Clase para el input de nombre de empleado
-var nomEmpleado;
+var inputClaseNombreEmpleado; //Variable que sera la clase para el campo input, cambiara de verde a rojo.
+var errorFieldNombreEmpleado; //variable que sera la clase que muestre el mensaje de error.
+var validoFieldNombreEmpleado; //variable que sera la clase que muestre el mensaje de validacion.
 
 if(nombreEmpleado.valido == true){
-    nomEmpleado = "verdeNumTienda";
+    inputClaseNombreEmpleado = "campoVerde";
+    validoFieldNombreEmpleado = "mensajeVerde";
+    errorFieldNombreEmpleado = "none";
 }
 else if(nombreEmpleado.valido == false){
-    nomEmpleado = "rojoNumTienda";
+    inputClaseNombreEmpleado = "campoRojo";
+    errorFieldNombreEmpleado = "mensajeRojo";
+    validoFieldNombreEmpleado = "none";
 }
 else if(nombreEmpleado.valido == null){
-    nomEmpleado = "";
+    inputClaseNombreEmpleado = "";
+    errorFieldNombreEmpleado = "none";
+    validoFieldNombreEmpleado = "none";
 }
 
 //Clase para el input de id del empleado
-var idTrabajador;
+var inputClaseId; //Variable que sera la clase para el campo input, cambiara de verde a rojo.
+var errorFieldId; //variable que sera la clase que muestre el mensaje de error.
+var validoFieldId; //variable que sera la clase que muestre el mensaje de validacion.
 
 if(idEmpleado.valido == true){
-    idTrabajador = "verdeNumTienda";
+    inputClaseId = "campoVerde";
+    validoFieldId = "mensajeVerde";
+    errorFieldId = "none";
 }
 else if(idEmpleado.valido == false){
-    idTrabajador = "rojoNumTienda";
+    inputClaseId = "campoRojo";
+    errorFieldId = "mensajeRojo";
+    validoFieldId = "none";
 }
 else if(idEmpleado.valido == null){
-    idTrabajador = "";
+    inputClaseId = "";
+    errorFieldId = "none";
+    validoFieldId = "none";
 }
 
-//Validamos que todos los campos objeto.valido sea igual a true
-if(numeroTienda.valido == true && nombreTienda.valido == true && capacidad.valido == true && nombreEmpleado.valido == true && idEmpleado.valido == true ){
+setValidacion(false);
+
+if(numeroTienda.valido == true && nombreTienda.valido == true && capacidad.valido == true ){
     setValidacion(true);
-}
-
+  }
+  
 
 
 
@@ -213,20 +284,24 @@ if(numeroTienda.valido == true && nombreTienda.valido == true && capacidad.valid
             </div>
 
             <div className="campos">
-                    <p   >
+                    <p>
                         <label for="numero">Numero de tienda</label>
 
                         <input  value={numeroTienda.campo}
                                 onChange={onChangeNumTienda}
                                 onKeyUp={validacionNumTienda}
                                 onBlur={validacionNumTienda}
-                                className={nTienda}
+                                className={inputClaseNumTienda}
                                 type="text" 
                                 id="numero" 
                                 name="numero" 
                                 placeholder="  p. ej.: 23458"
+                                maxlength="5"
                                 
                                 />
+
+                            <span id="error1" className={errorFieldNumTienda} >Debe de ingresar solo numeros, de 3 a 5 digitos.</span>
+                            <span id="validacion1" className={validoFieldNumTienda} >Numero de tienda valido.</span>
                     </p>
                     
                     <p>
@@ -236,11 +311,14 @@ if(numeroTienda.valido == true && nombreTienda.valido == true && capacidad.valid
                                 onChange={onChangeNombreTienda}
                                 onKeyUp={validacionNombreTienda}
                                 onBlur={validacionNombreTienda}
-                                className={nomTienda}
+                                className={inputClaseNombreTienda}
                                type="text" id="nombre" 
                                name="nombre" 
+                               maxlength="15"
                                placeholder="  p. ej.: Walmart"
                                />
+                        <span id="error2" className={errorFieldNombreTienda} >Debe de ingresar el nombre de la tienda, no mas de 15 letras.</span>
+                        <span id="validacion2" className={validoFieldNombreTienda} >Nombre de tienda valido.</span>
                     </p>
 
                     <p>
@@ -250,41 +328,50 @@ if(numeroTienda.valido == true && nombreTienda.valido == true && capacidad.valid
                                onChange={onChangeCapacidad}
                                onKeyUp={validacionCapacidadTienda}
                                 onBlur={validacionCapacidadTienda}
-                                className={capTienda}
+                                className={inputClaseCapacidad}
                                type="text" 
                                id="capacidad" 
                                name="capacidad" 
+                               maxlength="3"
                                placeholder="  p. ej.: 145"
                                />
+                        <span className={errorFieldCapacidad} >La capacidad debe de ser un numero maximo de 3 digitos.</span>
+                        <span className={validoFieldCapacidad} >La capacidad es accesible.</span>
                     </p>
 
                      <p>
-                        <label for="nombre-empleado">Nombre Empleado</label>
+                        <label for="nombre-empleado">Nombre Empleado - <span className="opcional">Optional</span></label>
 
                         <input value={nombreEmpleado.campo}
                                onChange={onChangeNombreEmpleado}
                                onKeyUp={validacionNombreEmpleado}
                                 onBlur={validacionNombreEmpleado}
-                                className={nomEmpleado}
+                                className={inputClaseNombreEmpleado}
                                type="text" id="nombre-empleado" 
                                name="nombre-empleado" 
+                               maxlength="15"
                                placeholder="  p. ej.: Anita la huerfanita"
                                />
+                        <span className={errorFieldNombreEmpleado} >Debe ingresar su nombre de pila.</span>
+                        <span className={validoFieldNombreEmpleado} >Nombre aceptable.</span>
                     </p>
 
                     <p>
-                        <label for="id">Id Empleado</label>
+                        <label for="id">Id Empleado - <span className="opcional">Optional</span></label>
 
                         <input value={idEmpleado.campo}
                                onChange={onChangeIdEmpleado}
                                onKeyUp={validacionIdEmpleado}
                                onBlur={validacionIdEmpleado}
-                               className={idTrabajador}
+                               className={inputClaseId}
                                type="text" 
                                id="id" 
                                name="id" 
+                               maxlength="3"
                                placeholder="  p. ej.: 29"
                                />
+                    <span className={errorFieldId} >Debe ingresar su numero de id. No ingresar letras.</span>
+                    <span className={validoFieldId} >Id Correcto.</span>
                     </p>
             </div>
             

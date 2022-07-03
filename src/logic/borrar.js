@@ -1,8 +1,18 @@
 export const borrar = ()=>{
-    let numeroTienda = document.getElementById("numero").value = "";
-    let nombreTienda = document.getElementById("nombre").value = "";
-    let capacidad = document.getElementById("capacidad").value = "";
-    let empleado = document.getElementById("nombre-empleado").value = "";
-    let id = document.getElementById("id").value = "";
+    //Objetos que representan los inputs
+    let numeroTienda = document.getElementById("numero");
+    let nombreTienda = document.getElementById("nombre");
+    let capacidad = document.getElementById("capacidad");
+    let empleado = document.getElementById("nombre-empleado");
+    let id = document.getElementById("id");
+
+    numeroTienda.className = '';
+    nombreTienda.className = '';
+    capacidad.className = '';
+    empleado.className = '';
+    id.className = '';
+
+   
+   
 }
 
