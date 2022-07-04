@@ -114,11 +114,19 @@ function App() {
                            name="Enviar" 
                            ejecutar={
                             ()=>{
-                              setNumeroTienda({campo: "", valido:false});
-                              setNombreTienda({campo: "", valido:false});
-                              setCapacidad({campo: "", valido:false});
-                              setNombreEmpleado({campo: "", valido:null});
-                              setIdEmpleado({campo: "", valido:null});
+                              if(numeroTienda.valido == false || numeroTienda.campo == ""){
+                                setNumeroTienda({...numeroTienda, valido:false});
+                              }
+                              if(nombreTienda.valido == false || nombreTienda.campo == ""){
+                                setNombreTienda({...nombreTienda, valido:false});
+                              }
+                              if(capacidad.valido == false || capacidad.campo == ""){
+                                setCapacidad({...capacidad, valido:false});
+                              }
+                              
+                             
+                            
+                              
                             }
                            }
                           

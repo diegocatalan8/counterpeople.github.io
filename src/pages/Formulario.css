@@ -41,7 +41,7 @@ form div p small{
 form .campos{
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.25);
     margin-top: 15px;
     padding-bottom: 50px;
     border-radius: 20px;
@@ -102,7 +102,7 @@ form .campos input:hover {
 
 .mensajeVerde{
     display: inline-block;
-    color: green;
+    color: rgb(11, 56, 11);
     font-size: small;
     font-weight: 400;    
 }
@@ -176,6 +176,8 @@ form .campos input:hover {
     width: 93%;
     margin-left: 15px;
     margin: auto;
+    margin-top: 35px;
+    
    }
 
    
@@ -186,6 +188,8 @@ form .campos input:hover {
    .container-button-form{
 
     margin-right: 28px;
+    
+    
    }
 
   }
@@ -193,8 +197,19 @@ form .campos input:hover {
 
   @media only screen and (min-width: 768px) {
     /* For desktop: */
-    form .campos{
+    form{
+        max-width: 750px;
         margin: auto;
+        margin-top: 30px;
+       
+       
+    }
+    form .campos{
+        
+       
+      margin: auto;
+      margin-top: 35px;
+
         
        }
 
@@ -206,10 +221,12 @@ form .campos input:hover {
     }
     .container-button-form{
        
-        width: 93%;
+        max-width: 700px;
         height: 80px;
         margin: auto;
         margin-top: 40px;
+      
+        
         
        
         
